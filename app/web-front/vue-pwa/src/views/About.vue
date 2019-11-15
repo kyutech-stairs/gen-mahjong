@@ -4,8 +4,8 @@
 			<h3>ドラ</h3>
 			<a href="/input">
 				<div class="dora-box">
-					<div v-if="input.selected">最初に表示される要素</div>
-  				<div v-else>切り替え後に表示される要素</div>
+					<!-- <div v-if="input.selected">最初に表示される要素</div>
+  				<div v-else>切り替え後に表示される要素</div> -->
 				</div>
 			</a>
 		</div>
@@ -21,8 +21,8 @@
 			<h3>初期牌</h3>
 			<a href="/input">
 				<div class="first-hai-box">
-					<div v-if="input.selected">最初に表示される要素</div>
-  				<div v-else>切り替え後に表示される要素</div>
+					<!-- <div v-if="input.selected">最初に表示される要素</div>
+  				<div v-else>切り替え後に表示される要素</div> -->
 				</div>
 			</a>
 		</div>
