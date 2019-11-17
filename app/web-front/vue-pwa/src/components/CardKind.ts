@@ -37,6 +37,6 @@ export default {
     'a5p': '',
     'a5s': '',
     'dd': '',
-  }
+  },
 };
 
