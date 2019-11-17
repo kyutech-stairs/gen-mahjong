@@ -2,8 +2,9 @@
   <div class="input">
     <div class="selected">
     </div>
-    <div class="index">
-    </div>
+		<div>
+			<AddCards></AddCards>
+		</div>
   </div>
   <!-- <button v-on:click="submit"></button> -->
 </template>

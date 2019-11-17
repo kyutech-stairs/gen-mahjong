@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <div v-for="card in cards" v-bind:key="card">
-    <li>{{ card }}</li>
-    </div>
-  </div>
+  <ul>
+    <li class="index" v-for="(value, name) in cards" :key="name">
+       <img :src="value">
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -15,8 +15,10 @@ export default {
   components: {
     CardList,
   },
-  data: {
-    cards: [ cards ],
+  data() {
+    return{
+       cards: cards.hai,
+    };
   },
   methods: {
     addCard(event) {
@@ -27,3 +29,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.index{
+  display: inline-block
+}
+</style>
