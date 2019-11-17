@@ -11,6 +11,7 @@
 
 <style lang="scss">
 @import "./html5reset-1.6.1";
+@import "./stylesheet";
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
