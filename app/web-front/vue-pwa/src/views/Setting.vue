@@ -12,11 +12,11 @@
       <div class="c-setting_wind">
         <div class="c-setting_wind-own">
           <h3 class="c-setting_wind-own_title">自風</h3>
-          <MyRadio class="c-setting_wind-own_select" v-model="sampleForm.radio" name="sample-radio" :options="options"></MyRadio>
+          <MyRadio class="c-setting_wind-own_select" v-model="sampleForm.radio" name="own-wind" :options="options"></MyRadio>
         </div>
         <div class="c-setting_wind-ground">
           <h3 class="c-setting_wind-ground_title">場風</h3>
-          <MyRadio class="c-setting_wind-ground_select" v-model="sampleForm.radio" name="sample-radio" :options="options"></MyRadio>
+          <MyRadio class="c-setting_wind-ground_select" v-model="sampleForm.radio" name="ground-wind" :options="options"></MyRadio>
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@
         <div class="c-setting_haipai-box">
           <ul class="c-setting_haipai-list">
             <li class="c-setting_haipai-list-item" v-for="item of items" v-bind:key="item.id">
-              <img class="c-setting_haipai-list-item-image" :src="item.hai" alt="">
+              <img class="c-setting_haipai-list-item-image" :src="item.hai" alt="hai">
             </li>
           </ul>
         </div>
@@ -181,6 +181,7 @@ export default {
       display: flex;
       justify-content: space-around;
       &-item{
+        width: 7%;
         margin-top: 5px;
         list-style: none;
         display: inline-block;
