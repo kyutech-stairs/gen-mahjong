@@ -104,6 +104,7 @@ export default {
 <style lang="scss" scoped>
 .c-setting{
    font-size: 25px;
+   color: white;
   &_top{
     display: flex;
     justify-content: space-around;
