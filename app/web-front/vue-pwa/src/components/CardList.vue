@@ -10,15 +10,15 @@
 
 <script>
 export default {
-  name: "CardList",
-  data:{
-		cards: [],
-		dora: '',
-	},
+  name: 'CardList',
+  data: {
+    cards: [],
+    dora: '',
+  },
   methods: {
-    updateValue: function(e) {
-      this.$emit("input", e.target.value);
-    }
-  }
+    updateValue(e) {
+      this.$emit('input', e.target.value);
+    },
+  },
 };
 </script>

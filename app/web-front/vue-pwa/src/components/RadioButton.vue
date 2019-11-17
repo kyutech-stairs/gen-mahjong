@@ -15,16 +15,16 @@
 
 <script>
 export default {
-  name: "MyRadio",
+  name: 'MyRadio',
   props: {
     value: { type: String, require: true },
     options: { type: Array, require: true },
     name: { type: String, require: true },
   },
   methods: {
-    updateValue: function(e) {
-      this.$emit("input", e.target.value);
-    }
-  }
+    updateValue(e) {
+      this.$emit('input', e.target.value);
+    },
+  },
 };
 </script>
