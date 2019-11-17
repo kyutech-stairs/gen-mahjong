@@ -10,7 +10,7 @@
 <script>
 import AddCards from '@/components/AddCards.vue';
 export default {
-    name: 'Input',
+    name: 'haipai',
     components: { AddCards },
 };
 </script>

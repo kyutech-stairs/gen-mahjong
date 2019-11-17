@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import Input from '../views/Input.vue';
+import Setting from '../views/Setting.vue';
+import Haipai from '../views/Haipai.vue';
 
 Vue.use(VueRouter);
 
@@ -12,17 +13,17 @@ const routes = [
     component: Home,
   },
   {
-    path: '/about',
-    name: 'about',
+    path: '/haipai',
+    name: 'haipai',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    component: Haipai,
   },
   {
-    path: '/input',   // new add
-    name: 'Input',    // new add
-    component: Input,  // new add
+    path: '/setting',   // new add
+    name: 'setting',    // new add
+    component: Setting,  // new add
   },
 ];
 

@@ -33,7 +33,7 @@
 import MyRadio from '@/components/RadioButton.vue';
 
 export default {
-  name: 'about',
+  name: 'setting',
   components: {
     MyRadio,
   },
