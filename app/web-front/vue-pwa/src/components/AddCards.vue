@@ -1,30 +1,26 @@
 <template>
   <ul>
-    <li class="index" v-for="(value, name) in cards" :key="name">
-       <img :src="value">
+    <li class="index" v-for="(value, name) in cards" :key="name" @click="addCard(name)" role="button">
+       <img :src="value" >
     </li>
   </ul>
 </template>
 
 <script>
-import CardList from '@/components/CardList.vue';
-import cards from './CardKind';
+import card_kind from './CardKind';
+import input_card_list from './InputCardList';
 
 export default {
   name: 'AddCards',
-  components: {
-    CardList,
-  },
   data() {
     return{
-       cards: cards.hai,
+       cards: card_kind.hai,
     };
   },
   methods: {
-    addCard(event) {
-      CardList.cards = {
-        value: this.cards.value,
-      };
+    addCard(name) {
+      input_card_list.cards.push(name);
+      // console.log(input_card_list.cards);
     },
   },
 };

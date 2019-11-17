@@ -1,24 +1,22 @@
 <template>
-  <div>
-		<div v-for="card in cards" :key="card">
-			<div>
-
-			</div>
-		</div>
-	</div>
+  <ul>
+    <li class="index" v-for="(value, name) in cards" :key="name" @click="addCard(name)" role="button">
+       <img :src="value" >
+    </li>
+  </ul>
 </template>
 
 <script>
+import card_kind from './CardKind';
+import input_card_list from './InputCardList';
+
 export default {
   name: 'CardList',
-  data: {
-    cards: [],
-    dora: '',
-  },
-  methods: {
-    updateValue(e) {
-      this.$emit('input', e.target.value);
-    },
+  data() {
+    return{
+      cards: input_card_list,
+      dora: '',
+    };
   },
 };
 </script>
