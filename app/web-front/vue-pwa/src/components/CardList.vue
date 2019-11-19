@@ -3,6 +3,10 @@
     <li class="index" v-for="(card, index) in cards" :key="index">
       <img :src="getImageUrl(card)">
     </li>
+    <br>
+    <li class="doraIndex" :key="dora">
+      <img :src="getImageUrl(dora)">
+    </li>
   </ul>
 </template>
 
@@ -15,11 +19,11 @@ export default {
   data() {
   return{
     cards: input_card_list.cards,
-    dora: ''
+    dora: input_card_list.dora,
   };
   },
-  methods:{
-    getImageUrl(obj){
+  methods: {
+    getImageUrl(obj) {
       const url = card_kind.hai[obj];
       return url;
     },
@@ -29,6 +33,9 @@ export default {
 
 <style scoped>
 .index{
+  display: inline-block
+}
+.doraIndex{
   display: inline-block
 }
 </style>
