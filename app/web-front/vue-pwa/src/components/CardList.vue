@@ -1,7 +1,7 @@
 <template>
   <ul>
-    <li class="index" v-for="(value, name) in cards" :key="name" @click="addCard(name)" role="button">
-       <img :src="value" >
+    <li class="index" v-for="(card, index) in cards" :key="index">
+      <img :src="getImageUrl(card)">
     </li>
   </ul>
 </template>
@@ -13,10 +13,22 @@ import input_card_list from './InputCardList';
 export default {
   name: 'CardList',
   data() {
-    return{
-      cards: input_card_list,
-      dora: '',
-    };
+  return{
+    cards: input_card_list.cards,
+    dora: ''
+  };
+  },
+  methods:{
+    getImageUrl(obj){
+      const url = card_kind.hai[obj];
+      return url;
+    },
   },
 };
 </script>
+
+<style scoped>
+.index{
+  display: inline-block
+}
+</style>

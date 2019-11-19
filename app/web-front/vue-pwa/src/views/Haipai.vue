@@ -1,7 +1,7 @@
 <template>
   <div class="input">
     <div class="selected">
-      <!-- <CardList></CardList> -->
+      <CardList></CardList>
     </div>
     <div>
       <AddCards></AddCards>
@@ -14,6 +14,6 @@ import AddCards from '@/components/AddCards.vue';
 import CardList from '@/components/CardList.vue';
 export default {
     name: 'haipai',
-    components: { AddCards },
+    components: { AddCards, CardList},
 };
 </script>
