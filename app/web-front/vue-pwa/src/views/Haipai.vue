@@ -4,10 +4,11 @@
       <CardList></CardList>
     </div>
     <div class="c-haipai_keybord">
-      <AddCards></AddCards>
+      <AddCards @doraName="dora_change"></AddCards>
     </div>
     <div class="c-haipai_rightset">
       <div class="c-haipai_dora">
+        <Dora :dora="dora"></Dora>
       </div>
       <div class="c-haipai_button"></div>
     </div>
@@ -17,9 +18,22 @@
 <script>
 import AddCards from '@/components/AddCards.vue';
 import CardList from '@/components/CardList.vue';
+import Dora from '@/components/Dora.vue';
+
 export default {
     name: 'haipai',
-    components: { AddCards, CardList},
+    components: { AddCards, CardList, Dora },
+    data() {
+      return{
+        dora: null,
+      }
+    },
+    methods: {
+      dora_change(getDoraName){
+        this.dora = getDoraName;
+        console.log(this.dora);
+      },
+    },
 };
 </script>
 

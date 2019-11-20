@@ -34,10 +34,14 @@ export default {
         // console.log(input_card_list.cards);
       } else if (listLength === 14 && input_card_list.dora === null) {
         input_card_list.dora = name;
-        // console.log(input_card_list.dora);
+        this.getDoraName(name);
       } else {
         alert('入力数が超えています');
       }
+    },
+    getDoraName(name) {
+      this.$emit('doraName', name);
+      console.log(name);
     },
   },
 };
