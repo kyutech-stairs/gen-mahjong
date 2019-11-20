@@ -20,7 +20,11 @@ export default {
   methods: {
     addCard(name) {
       const listLength = input_card_list.cards.reduce((a, x) => a += x.amount, 0);
-      if (listLength < 14) {
+      // console.log(this.$store.state.focus)
+      if (this.$store.state.focus === true) {
+        input_card_list.dora = name;
+        // console.log(input_card_list.dora);
+      } else if (listLength < 14 && this.$store.state.focus === false) {
         const target = input_card_list.cards.findIndex((v) => v.hai === name);
         if (target === -1) {
           input_card_list.cards.push({hai: name, amount: 1});
@@ -32,9 +36,6 @@ export default {
           }
         }
         // console.log(input_card_list.cards);
-      } else if (listLength === 14 && input_card_list.dora === null) {
-        input_card_list.dora = name;
-        // console.log(input_card_list.dora);
       } else {
         alert('入力数が超えています');
       }

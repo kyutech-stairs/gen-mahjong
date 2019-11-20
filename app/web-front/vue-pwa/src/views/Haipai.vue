@@ -7,7 +7,7 @@
       <AddCards></AddCards>
     </div>
     <div class="c-haipai_rightset">
-      <div class="c-haipai_dora">
+      <div class="c-haipai_dora" v-on:click="switchFocusTrue">
       </div>
       <div class="c-haipai_button"></div>
     </div>
@@ -20,6 +20,11 @@ import CardList from '@/components/CardList.vue';
 export default {
     name: 'haipai',
     components: { AddCards, CardList},
+    methods: {
+      switchFocusTrue() {
+        this.$store.commit('switchFocus', true);
+      },
+    },
 };
 </script>
 
