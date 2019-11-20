@@ -19,16 +19,23 @@ export default {
   },
   methods: {
     addCard(name) {
-      const listLength = input_card_list.cards.length;
+      const listLength = input_card_list.cards.reduce((a, x) => a += x.amount, 0);
       if (listLength < 14) {
-        input_card_list.cards.push(name);
+        const target = input_card_list.cards.findIndex((v) => v.hai === name);
+        if (target === -1) {
+          input_card_list.cards.push({hai: name, amount: 1});
+        } else {
+          if (input_card_list.cards[target].amount < 4) {
+            input_card_list.cards[target].amount += 1;
+          } else {
+            alert('同一の牌で入力できる枚数は4牌までです');
+          }
+        }
         // console.log(input_card_list.cards);
-      }
-      else if (listLength === 14 && input_card_list.dora === null) {
+      } else if (listLength === 14 && input_card_list.dora === null) {
         input_card_list.dora = name;
         // console.log(input_card_list.dora);
-      }
-      else {
+      } else {
         alert('入力数が超えています');
       }
     },
