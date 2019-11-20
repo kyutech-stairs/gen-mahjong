@@ -7,7 +7,7 @@
       <AddCards @doraName="dora_change"></AddCards>
     </div>
     <div class="c-haipai_rightset">
-      <div class="c-haipai_dora">
+      <div class="c-haipai_dora" v-on:click="switchFocusTrue">
         <Dora :dora="dora"></Dora>
       </div>
       <div class="c-haipai_button"></div>
@@ -26,14 +26,17 @@ export default {
     data() {
       return{
         dora: null,
-      }
+      };
     },
     methods: {
-      dora_change(getDoraName){
+      dora_change(getDoraName) {
         this.dora = getDoraName;
-        console.log(this.dora);
+      },
+      switchFocusTrue() {
+        this.$store.commit('switchFocus', true);
       },
     },
+    components: { AddCards, CardList, Dora },
 };
 </script>
 
