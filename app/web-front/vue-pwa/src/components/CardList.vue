@@ -1,8 +1,12 @@
 <template>
   <ul>
-    <li class="index" v-for="(card, index) in cards" :key="index">
-      <img :src="getImageUrl(card)">
-    </li>
+    <template v-for="(card, index) in cards">
+      <template v-for="n in card.amount">
+        <li class="index" :key="`${n}${index}`">
+          <img :src="getImageUrl(card.hai)">
+        </li>
+      </template>
+    </template>
     <br>
     <li class="doraIndex" :key="dora">
       <img :src="getImageUrl(dora)">
