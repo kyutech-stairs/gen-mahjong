@@ -6,6 +6,11 @@
     <div class="c-haipai_keybord">
       <AddCards></AddCards>
     </div>
+    <div class="c-haipai_rightset">
+      <div class="c-haipai_dora">
+      </div>
+      <div class="c-haipai_button"></div>
+    </div>
   </div>
   <!-- <button v-on:click="submit"></button> -->
 </template>
@@ -22,6 +27,7 @@ export default {
 .c-haipai{
   display: block;
   height: 75%;
+  position: relative;
   &_selected{
     width: 90%;
     height: 30%;
@@ -36,10 +42,6 @@ export default {
   }
   &_keybord{
     display: inline-block;
-    left: 5%;
-    position: relative;
-    display: flex;
-    justify-content: space-around;
     margin-top: 10px;
     width: 65%;
     min-height: 30px;
@@ -49,6 +51,22 @@ export default {
     border-radius: 5px;
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.16));
     overflow: scroll;
+  }
+  &_rightset{
+    display: inline-block;
+    height: 60%;
+    width: 25%;
+    position: relative;
+  }
+  &_dora{
+    position: absolute;
+    display: inline-block;
+    width: 50px;
+    height: 60px;
+    background-color: #f4f4f4;
+    border: 4px solid #e8e8e8;
+    margin-left: -10%;
+    top: 0;
   }
 }
 </style>
