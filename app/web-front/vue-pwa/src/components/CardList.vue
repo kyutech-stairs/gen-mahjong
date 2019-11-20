@@ -1,16 +1,16 @@
 <template>
-  <ul>
+  <ul class="c-selected">
     <template v-for="(card, index) in cards">
       <template v-for="n in card.amount">
-        <li class="index" :key="`${n}${index}`">
-          <img :src="getImageUrl(card.hai)">
+        <li class="c-selected_hai" :key="`${n}${index}`">
+          <img class="c-selected_hai-image" :src="getImageUrl(card.hai)">
         </li>
       </template>
     </template>
     <br>
-    <li class="doraIndex" :key="dora">
+    <div class="doraIndex" :key="dora">
       <img :src="getImageUrl(dora)">
-    </li>
+    </div>
   </ul>
 </template>
 
@@ -35,11 +35,15 @@ export default {
 };
 </script>
 
-<style scoped>
-.index{
-  display: inline-block
-}
-.doraIndex{
-  display: inline-block
+<style lang="scss" scoped>
+.c-selected{
+  overflow-x: scroll;
+  height: 100%;
+  display: flex;
+  &_hai{
+    display: inline-block;
+    margin: 0 2px;
+    &-image{}
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <ul>
-    <li class="index" v-for="(value, name) in cards" :key="name" @click="addCard(name)" role="button">
-       <img :src="value" >
+  <ul class="c-keybord">
+    <li class="c-keybord_hai" v-for="(value, name) in cards" :key="name" @click="addCard(name)" role="button">
+       <img class="c-keybord_hai_image" :src="value" >
     </li>
   </ul>
 </template>
@@ -43,8 +43,11 @@ export default {
 };
 </script>
 
-<style scoped>
-.index{
-  display: inline-block
+<style lang="scss" scoped>
+.c-keybord{
+  &_hai{
+    display: inline-block;
+    margin: 2px;
+  }
 }
 </style>
