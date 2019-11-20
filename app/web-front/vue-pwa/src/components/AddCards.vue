@@ -23,6 +23,7 @@ export default {
       // console.log(this.$store.state.focus)
       if (this.$store.state.focus === true) {
         input_card_list.dora = name;
+        this.getDoraName(name);
         // console.log(input_card_list.dora);
       } else if (listLength < 14 && this.$store.state.focus === false) {
         const target = input_card_list.cards.findIndex((v) => v.hai === name);
@@ -35,10 +36,12 @@ export default {
             alert('同一の牌で入力できる枚数は4牌までです');
           }
         }
-        // console.log(input_card_list.cards);
       } else {
         alert('入力数が超えています');
       }
+    },
+    getDoraName(name) {
+      this.$emit('doraName', name);
     },
   },
 };
