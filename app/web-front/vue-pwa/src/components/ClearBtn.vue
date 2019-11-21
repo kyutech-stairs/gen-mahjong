@@ -25,8 +25,6 @@ export default {
       }
       input_card_list.dora = null;
       this.getDoraName(null);
-      console.log(input_card_list.dora);
-      // console.log(9);
     },
     getDoraName(name) {
       this.$emit('doraName', name);
