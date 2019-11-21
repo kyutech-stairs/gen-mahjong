@@ -3,11 +3,16 @@
     <div class="c-setting_top">
       <div class="c-setting_dora">
         <h3 class="c-setting_dora_title">ドラ</h3>
-        <a href="/input">
+        <router-link to="/haipai">
           <div class="c-setting_dora-box">
-            <img class="c-setting_dora-image" src="../../public/img/blank_cell.svg" alt="dora">
+            <template v-if="InputDora">
+              <img class="c-setting_dora-image" :src="card_kind.hai[InputDora]" alt="dora">
+            </template>
+            <template v-else>
+              <img class="c-setting_dora-image" src="../../public/img/blank_cell.svg" alt="dora">
+            </template>
           </div>
-        </a>
+        </router-link>
       </div>
       <div class="c-setting_wind">
         <div class="c-setting_wind-own">
@@ -23,15 +28,26 @@
 
     <div class="c-setting_haipai">
       <h3 class="c-setting_haipai-title">配牌</h3>
-      <a href="/input">
+      <router-link to="/haipai">
         <div class="c-setting_haipai-box">
-          <ul class="c-setting_haipai-list">
-            <li class="c-setting_haipai-list-item" v-for="item of items" v-bind:key="item.id">
-              <img class="c-setting_haipai-list-item-image" :src="item.hai" alt="hai">
-            </li>
+          <ul :class="switchHaipaiClass(InputCard.length)">
+            <template v-if="!InputCard.length">
+              <li class="c-setting_haipai-list-item" v-for="n in 14" v-bind:key="n">
+                <img class="c-setting_haipai-list-item-image" src="/img/blank_cell.svg" alt="hai">
+              </li>
+            </template>
+            <template v-else>
+              <template v-for="card in InputCard">
+                <template v-for="n in card.amount">
+                  <li class="c-setting_haipai-list-item" v-bind:key="`${card.hai}-${n}`">
+                    <img class="c-setting_haipai-list-item-image" :src="card_kind.hai[card.hai]" alt="hai">
+                  </li>
+                </template>
+              </template>
+            </template>
           </ul>
         </div>
-      </a>
+      </router-link>
     </div>
 
   </div>
@@ -39,6 +55,8 @@
 
 <script>
 import MyRadio from '@/components/RadioButton.vue';
+import InputCardList from '@/components/InputCardList';
+import CardKind from '@/components/CardKind';
 
 export default {
   name: 'setting',
@@ -47,6 +65,11 @@ export default {
   },
   data() {
     return {
+      classHaipaiSelected: 'c-setting_haipai-list selected',
+      classHaipai: 'c-setting_haipai-list',
+      InputCard: InputCardList.cards,
+      InputDora: InputCardList.dora,
+      card_kind: CardKind,
       input: {
         selected: true,
       },
@@ -96,6 +119,13 @@ export default {
   methods: {
     sendForm() {
       // formデータの送信処理
+    },
+    switchHaipaiClass(isHaipai) {
+      if (isHaipai) {
+        return this.classHaipaiSelected;
+      } else {
+        return this.classHaipai;
+      }
     },
   },
 };
@@ -181,6 +211,9 @@ export default {
       height: 100%;
       display: flex;
       justify-content: space-around;
+      &.selected{
+        justify-content: center;
+      }
       &-item{
         width: 7%;
         margin-top: 5px;
