@@ -3,15 +3,17 @@
     <div class="c-haipai_selected">
       <CardList></CardList>
     </div>
-    <div class="c-haipai_keybord">
-      <AddCards @doraName="dora_change"></AddCards>
-    </div>
-    <div class="c-haipai_rightset">
-      <div class="c-haipai_dora" v-on:click="switchFocusTrue">
-        <Dora :dora="dora"></Dora>
+    <div class="c-haipai_bottom">
+      <div class="c-haipai_keybord">
+        <AddCards @doraName="dora_change"></AddCards>
       </div>
-      <div class="c-haipai_button">
-        <ClearBtn @doraName="dora_change"></ClearBtn>
+      <div class="c-haipai_rightset">
+        <div class="c-haipai_dora" v-on:click="switchFocusTrue">
+          <Dora :dora="dora"></Dora>
+        </div>
+        <div class="c-haipai_button">
+          <ClearBtn @doraName="dora_change"></ClearBtn>
+        </div>
       </div>
     </div>
   </div>
@@ -22,13 +24,14 @@ import AddCards from '@/components/AddCards.vue';
 import CardList from '@/components/CardList.vue';
 import Dora from '@/components/Dora.vue';
 import ClearBtn from '@/components/ClearBtn.vue';
+import InputCardList from '@/components/InputCardList';
 
 export default {
   name: 'haipai',
   components: { AddCards, CardList, Dora, ClearBtn },
   data() {
     return{
-      dora: null,
+      dora: InputCardList.dora,
     };
   },
   methods: {
@@ -44,12 +47,13 @@ export default {
 
 <style lang="scss" scoped>
 .c-haipai{
+  top: 5%;
   display: block;
-  height: 75%;
+  height: 90%;
   position: relative;
   &_selected{
     width: 90%;
-    height: 30%;
+    height: 20%;
     border-radius: 10px;
     background-color: #f4f4f4;
     border: 4px solid #e8e8e8;
@@ -59,12 +63,18 @@ export default {
     transform: translateX(-50%);
     position: relative;
   }
+  &_bottom{
+    display: flex;
+    justify-content: center;
+    height: 70%;
+    margin-top: 2%;
+  }
   &_keybord{
     display: inline-block;
-    margin-top: 10px;
+    box-sizing: border-box;
     width: 65%;
     min-height: 30px;
-    height: 60%;
+    height: 100%;
     background: #dedbdb;
     border: 4px solid #e8e8e8;
     border-radius: 5px;
@@ -72,20 +82,28 @@ export default {
     overflow: scroll;
   }
   &_rightset{
-    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
     height: 60%;
     width: 25%;
-    position: relative;
   }
   &_dora{
-    position: absolute;
-    display: inline-block;
-    width: 50px;
-    height: 60px;
+    box-sizing: border-box;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 80px;
     background-color: #f4f4f4;
     border: 4px solid #e8e8e8;
-    margin-left: -10%;
-    top: 0;
+  }
+  &_button{
+    display: block;
+    margin-top: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
   }
 }
 </style>
