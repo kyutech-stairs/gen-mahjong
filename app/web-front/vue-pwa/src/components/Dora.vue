@@ -1,5 +1,6 @@
 <template>
-  <img :src="getImageUrl(dora)" alt="dora">
+  <img v-if="dora === null" src="/img/blank_cell.svg" alt="">
+  <img v-else :src="getImageUrl(dora)" alt="dora">
 </template>
 
 <script>
