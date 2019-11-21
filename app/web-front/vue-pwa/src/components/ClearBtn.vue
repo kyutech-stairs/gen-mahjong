@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="like" @click="reset_cards">
+    <button class="resetbtn" @click="reset_cards">
       reset
     </button>
   </div>
@@ -35,7 +35,7 @@ export default {
 };
 </script>
 <style>
-.like {
+.resetbtn{
   width: 80px;
   height: 60px;
   background-color: #f4f4f4;
