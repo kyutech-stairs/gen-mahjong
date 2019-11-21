@@ -10,7 +10,9 @@
       <div class="c-haipai_dora" v-on:click="switchFocusTrue">
         <Dora :dora="dora"></Dora>
       </div>
-      <div class="c-haipai_button"></div>
+      <div class="c-haipai_button">
+        <ClearBtn @doraName="dora_change"></ClearBtn>
+      </div>
     </div>
   </div>
   <!-- <button v-on:click="submit"></button> -->
@@ -19,24 +21,24 @@
 import AddCards from '@/components/AddCards.vue';
 import CardList from '@/components/CardList.vue';
 import Dora from '@/components/Dora.vue';
+import ClearBtn from '@/components/ClearBtn.vue';
 
 export default {
-    name: 'haipai',
-    components: { AddCards, CardList, Dora },
-    data() {
-      return{
-        dora: null,
-      };
+  name: 'haipai',
+  components: { AddCards, CardList, Dora, ClearBtn },
+  data() {
+    return{
+      dora: null,
+    };
+  },
+  methods: {
+    dora_change(getDoraName) {
+      this.dora = getDoraName;
     },
-    methods: {
-      dora_change(getDoraName) {
-        this.dora = getDoraName;
-      },
-      switchFocusTrue() {
-        this.$store.commit('switchFocus', true);
-      },
+    switchFocusTrue() {
+      this.$store.commit('switchFocus', true);
     },
-    components: { AddCards, CardList, Dora },
+  },
 };
 </script>
 
