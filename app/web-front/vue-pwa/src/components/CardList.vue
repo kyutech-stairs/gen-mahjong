@@ -7,10 +7,6 @@
         </li>
       </template>
     </template>
-    <br>
-    <div class="doraIndex" :key="dora">
-      <img :src="getImageUrl(dora)">
-    </div>
   </ul>
 </template>
 

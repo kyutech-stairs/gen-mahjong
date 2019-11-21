@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">家</router-link> |
       <router-link to="/setting">設定</router-link> |
 			<router-link to="/haipai">配牌</router-link>
-    </div>
+    </div> -->
     <router-view/>
   </div>
 </template>
