@@ -45,7 +45,9 @@
         </ul>
       </router-link>
     </div>
-    <router-link class="c-setting_submit" to="/result">データ送信</router-link>
+    <div v-show="examData()">
+      <router-link class="c-setting_submit" to="/result">データ送信</router-link>
+    </div>
   </div>
 </template>
 
@@ -123,6 +125,15 @@ export default {
         return this.classHaipaiSelected;
       } else {
         return this.classHaipai;
+      }
+    },
+    examData() {
+      const listLength = InputCardList.cards.reduce((a, x) => a += x.amount, 0);
+      const isDora = InputCardList.dora;
+      if (listLength === 14 && isDora !== null) {
+        return true;
+      } else {
+        return false;
       }
     },
   },
