@@ -1,7 +1,7 @@
 <template>
   <div>
     <button class="resetbtn" @click="reset_cards">
-      reset
+      リセット
     </button>
   </div>
 
@@ -34,10 +34,14 @@ export default {
 </script>
 <style>
 .resetbtn{
-  width: 80px;
-  height: 60px;
-  background-color: #f4f4f4;
-  border: 4px solid #e8e8e8;
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 50px;
+  background: #68c4f5;
+  border: none;
+  color: white;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.16));
   margin-left: -10%;
 }
 </style>

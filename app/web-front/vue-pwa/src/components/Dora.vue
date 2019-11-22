@@ -1,5 +1,5 @@
 <template>
-  <img v-if="dora === null" src="/img/blank_cell.svg" alt="">
+  <img v-if="dora === null" src="/img/blank_cell.svg" alt="blank">
   <img v-else :src="getImageUrl(dora)" alt="dora">
 </template>
 
@@ -20,5 +20,9 @@ export default {
 </script>
 
 <style>
-
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 </style>
