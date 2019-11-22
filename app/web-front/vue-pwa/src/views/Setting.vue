@@ -138,7 +138,8 @@ export default {
   &_top{
     display: flex;
     justify-content: space-around;
-    margin-top: 30px;
+    margin-top: 10%;
+    height: 50%;
   }
   &_dora{
     display: inline-block;
@@ -150,7 +151,7 @@ export default {
     }
     &-box{
       display: inline-block;
-      height: 60px;
+      height: 60%;
       opacity: 0.89;
       border-radius: 10px;
       -webkit-backdrop-filter: blur(30px);
@@ -166,6 +167,8 @@ export default {
   }
   &_wind{
     display: inline-block;
+    height: 100%;
+    padding-top: 3%;
     &-own{
       margin-top: 5px;
       margin-bottom: 10px;
@@ -188,7 +191,7 @@ export default {
     }
   }
   &_haipai{
-    margin-top: 80px;
+    margin-top: 1%;
     &-title{
       display: inline-block;
       height: 60px;
