@@ -22,20 +22,20 @@ export default {
   },
   computed: {
     wind: {
-      get: function() {
+      get() {
         if (this.name === 'own-wind') {
           return this.$store.state.own_wind;
         } else {
           return this.$store.state.ground_wind;
         }
       },
-      set: function(value) {
+      set(value) {
         if (this.name === 'own-wind') {
           this.$store.commit('switchOwnWind', value);
         } else {
           this.$store.commit('switchGroundWind', value);
         }
-      }
+      },
     },
   },
 };
