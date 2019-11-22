@@ -19,11 +19,14 @@ export default {
   props: {
     options: { type: Array, require: true },
     name: { type: String, require: true },
-    value_change_method: '',
   },
   methods: {
     updateValue(e) {
-      this.$store.commit(value_change_method, e.target.value);
+      if (this.name === 'own-wind') {
+        this.$store.commit('switchOwnWind', e.target.value);
+      } else {
+        this.$store.commit('switchGroundWind', e.target.value);
+      }
     },
   },
 };

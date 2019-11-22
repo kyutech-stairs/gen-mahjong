@@ -15,7 +15,6 @@ export default new Vuex.Store({
     },
     switchOwnWind(state, wind) {
       state.own_wind = wind;
-      console.log(wind);
     },
     switchGroundWind(state, wind) {
       state.ground_wind = wind;
