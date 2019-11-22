@@ -38,6 +38,8 @@
 </template>
 <script>
 import out_put_data from '../components/OutPutData';
+import axios from 'axios';
+
 export default {
   name: 'result',
   data() {
@@ -47,7 +49,45 @@ export default {
       advice: out_put_data.advice,
       yaku_name: out_put_data.yaku_name,
       star_number: out_put_data.star_number,
+      info: null,
+      post_data: {
+        haipai: [
+          {name: '1m', amount: 1},
+          {name: '2m', amount: 1},
+          {name: '3m', amount: 1},
+          {name: '4m', amount: 1},
+          {name: '5m', amount: 1},
+          {name: '6m', amount: 1},
+          {name: '7m', amount: 1},
+          {name: '8m', amount: 1},
+          {name: '9m', amount: 1},
+          {name: '1s', amount: 1},
+          {name: '2s', amount: 1},
+          {name: '3s', amount: 1},
+          {name: '4s', amount: 1},
+          {name: '5s', amount: 1},
+        ],
+        dora:{
+          name: '7s',
+        },
+        ground:{
+          name: 'a',
+        },
+        own: {
+          name: 'a',
+        },
+      },
     };
+  },
+  mounted() {
+    const axiosApi = axios.create({
+      headers: {
+        'Content-Type':'application/json',
+      },
+    });
+    console.log(JSON.stringify(this.post_data));
+    axiosApi.post('http://127.0.0.1:8000/genapp/', JSON.stringify(this.post_data))
+    .then(response => (this.info = response));
   },
 };
 </script>
