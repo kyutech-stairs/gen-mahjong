@@ -3,15 +3,13 @@
     <div class="c-setting_top">
       <div class="c-setting_dora">
         <h3 class="c-setting_dora_title">ドラ</h3>
-        <router-link to="/haipai">
-          <div class="c-setting_dora-box">
-            <template v-if="InputDora">
-              <img class="c-setting_dora-image" :src="card_kind.hai[InputDora]" alt="dora">
-            </template>
-            <template v-else>
-              <img class="c-setting_dora-image" src="../../public/img/blank_cell.svg" alt="dora">
-            </template>
-          </div>
+        <router-link class="c-setting_dora-box" to="/haipai">
+          <template v-if="InputDora">
+            <img class="c-setting_dora-image" :src="card_kind.hai[InputDora]" alt="dora">
+          </template>
+          <template v-else>
+            <img class="c-setting_dora-image" src="../../public/img/blank_cell.svg" alt="dora">
+          </template>
         </router-link>
       </div>
       <div class="c-setting_wind">
@@ -28,28 +26,26 @@
 
     <div class="c-setting_haipai">
       <h3 class="c-setting_haipai-title">配牌</h3>
-      <router-link to="/haipai">
-        <div class="c-setting_haipai-box">
-          <ul :class="switchHaipaiClass(InputCard.length)">
-            <template v-if="!InputCard.length">
-              <li class="c-setting_haipai-list-item" v-for="n in 14" v-bind:key="n">
-                <img class="c-setting_haipai-list-item-image" src="/img/blank_cell.svg" alt="hai">
-              </li>
-            </template>
-            <template v-else>
-              <template v-for="card in InputCard">
-                <template v-for="n in card.amount">
-                  <li class="c-setting_haipai-list-item" v-bind:key="`${card.hai}-${n}`">
-                    <img class="c-setting_haipai-list-item-image" :src="card_kind.hai[card.hai]" alt="hai">
-                  </li>
-                </template>
+      <router-link class="c-setting_haipai-box" to="/haipai">
+        <ul :class="switchHaipaiClass(InputCard.length)">
+          <template v-if="!InputCard.length">
+            <li class="c-setting_haipai-list-item" v-for="n in 14" v-bind:key="n">
+              <img class="c-setting_haipai-list-item-image" src="/img/blank_cell.svg" alt="hai">
+            </li>
+          </template>
+          <template v-else>
+            <template v-for="card in InputCard">
+              <template v-for="n in card.amount">
+                <li class="c-setting_haipai-list-item" v-bind:key="`${card.hai}-${n}`">
+                  <img class="c-setting_haipai-list-item-image" :src="card_kind.hai[card.hai]" alt="hai">
+                </li>
               </template>
             </template>
-          </ul>
-        </div>
+          </template>
+        </ul>
       </router-link>
     </div>
-
+    <router-link class="c-setting_submit" to="/result">データ送信</router-link>
   </div>
 </template>
 
@@ -134,26 +130,40 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+%btn-propaty{
+  box-sizing: border-box;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 50px;
+  padding: 10px 7px 2px 7px;
+  background-color: #68c4f5;
+  border: none;
+  color: white;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.16));
+}
 .c-setting{
    font-size: 25px;
    color: white;
+   padding-top: 7%;
+   box-sizing: border-box;
   &_top{
     display: flex;
     justify-content: space-around;
-    margin-top: 10%;
     height: 50%;
   }
   &_dora{
     display: inline-block;
+    height: 40%;
     &_title{
       display: inline-block;
       vertical-align: middle;
-      height: 60px;
+      height: 80px;
       margin-right: 10px;
     }
     &-box{
       display: inline-block;
-      height: 60%;
+      height: 80px;
+      width: 60px;
       opacity: 0.89;
       border-radius: 10px;
       -webkit-backdrop-filter: blur(30px);
@@ -163,7 +173,7 @@ export default {
       background-color: #4e4e4e;
     }
     &-image{
-      object-fit: cover;
+      object-fit: contain;
       height: 100%;
     }
   }
@@ -230,6 +240,16 @@ export default {
         }
       }
     }
+  }
+  &_submit{
+    @extend %btn-propaty;
+    position: absolute;
+    display: block;
+    text-decoration: none;
+    color: white;
+    width: 30%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
