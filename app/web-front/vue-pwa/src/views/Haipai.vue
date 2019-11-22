@@ -14,10 +14,10 @@
         <div class="c-haipai_button">
           <ClearBtn @doraName="dora_change"></ClearBtn>
         </div>
+        <router-link to="/" class="c-haipai_move">入力完了</router-link>
       </div>
     </div>
   </div>
-  <!-- <button v-on:click="submit"></button> -->
 </template>
 <script>
 import AddCards from '@/components/AddCards.vue';
@@ -101,6 +101,12 @@ export default {
   &_button{
     display: block;
     margin-top: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+  }
+  &_move{
+    display: block;
     margin-left: 50%;
     transform: translateX(-50%);
     width: 80%;
