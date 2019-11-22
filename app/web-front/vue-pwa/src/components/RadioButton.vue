@@ -17,13 +17,13 @@
 export default {
   name: 'MyRadio',
   props: {
-    value: { type: String, require: true },
     options: { type: Array, require: true },
     name: { type: String, require: true },
+    value_change_method: '',
   },
   methods: {
     updateValue(e) {
-      this.$emit('input', e.target.value);
+      this.$store.commit(value_change_method, e.target.value);
     },
   },
 };
