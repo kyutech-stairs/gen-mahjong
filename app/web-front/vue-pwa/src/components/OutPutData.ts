@@ -1,5 +1,5 @@
 export default {
-  title: 'タイピン',
+  title: '',
   overview: '',
   advice: '',
   yaku_name: '',
