@@ -34,10 +34,9 @@ export default {
     'e': '/img/hai/e.gif',
     'f': '/img/hai/f.gif',
     'g': '/img/hai/g.gif',
-    'a5m': '',
-    'a5p': '',
-    'a5s': '',
-    'dd': '',
+    'a5m': '/img/hai/a5m.png',
+    'a5p': '/img/hai/a5p.png',
+    'a5s': '/img/hai/a5s.png',
   },
 };
 

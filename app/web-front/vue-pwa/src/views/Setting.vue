@@ -17,11 +17,11 @@
       <div class="c-setting_wind">
         <div class="c-setting_wind-own">
           <h3 class="c-setting_wind-own_title">自風</h3>
-          <MyRadio class="c-setting_wind-own_select" v-model="sampleForm.radio" name="own-wind" :options="options"></MyRadio>
+          <MyRadio class="c-setting_wind-own_select" name="own-wind" :options="options"></MyRadio>
         </div>
         <div class="c-setting_wind-ground">
           <h3 class="c-setting_wind-ground_title">場風</h3>
-          <MyRadio class="c-setting_wind-ground_select" v-model="sampleForm.radio" name="ground-wind" :options="options"></MyRadio>
+          <MyRadio class="c-setting_wind-ground_select" name="ground-wind" :options="options"></MyRadio>
         </div>
       </div>
     </div>
@@ -91,7 +91,9 @@ export default {
       ],
       sampleForm: {
         text: '',
-        radio: '',
+        own_radio: '',
+        ground_radio: '',
+        // radio: '',
         select: '',
         textarea: '',
         checkbox: [],
@@ -138,7 +140,8 @@ export default {
   &_top{
     display: flex;
     justify-content: space-around;
-    margin-top: 30px;
+    margin-top: 10%;
+    height: 50%;
   }
   &_dora{
     display: inline-block;
@@ -150,7 +153,7 @@ export default {
     }
     &-box{
       display: inline-block;
-      height: 60px;
+      height: 60%;
       opacity: 0.89;
       border-radius: 10px;
       -webkit-backdrop-filter: blur(30px);
@@ -166,6 +169,8 @@ export default {
   }
   &_wind{
     display: inline-block;
+    height: 100%;
+    padding-top: 3%;
     &-own{
       margin-top: 5px;
       margin-bottom: 10px;
@@ -188,7 +193,7 @@ export default {
     }
   }
   &_haipai{
-    margin-top: 80px;
+    margin-top: 1%;
     &-title{
       display: inline-block;
       height: 60px;
