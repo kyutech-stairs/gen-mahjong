@@ -21,6 +21,9 @@ export default new Vuex.Store({
     },
   },
   getters: {
+    focusInputBox: (state) => {
+      return state.focus;
+    },
     ownWind: (state) => {
       return state.own_wind;
     },
