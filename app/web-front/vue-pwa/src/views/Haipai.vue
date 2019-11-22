@@ -1,6 +1,6 @@
 <template>
   <div class="c-haipai">
-    <div class="c-haipai_selected">
+    <div :class="switchHaipaiClass($store.getters.focusInputBox)">
       <CardList></CardList>
     </div>
     <div class="c-haipai_bottom">
@@ -8,7 +8,7 @@
         <AddCards @doraName="dora_change"></AddCards>
       </div>
       <div class="c-haipai_rightset">
-        <div class="c-haipai_dora" v-on:click="switchFocusTrue">
+        <div :class="switchDoraClass($store.getters.focusInputBox)" v-on:click="switchFocusTrue">
           <Dora :dora="dora"></Dora>
         </div>
         <div class="c-haipai_button">
@@ -31,6 +31,10 @@ export default {
   components: { AddCards, CardList, Dora, ClearBtn },
   data() {
     return{
+      classHaipaiSelected: 'c-haipai_selected selected',
+      classHaipai: 'c-haipai_selected',
+      classDoraSelected: 'c-haipai_dora selected',
+      classDora: 'c-haipai_dora',
       dora: InputCardList.dora,
     };
   },
@@ -40,6 +44,21 @@ export default {
     },
     switchFocusTrue() {
       this.$store.commit('switchFocus', true);
+    },
+    switchHaipaiClass(status) {
+      if (!status) {
+        return this.classHaipaiSelected;
+      } else {
+        return this.classHaipai;
+      }
+    },
+    switchDoraClass(status) {
+      if (status) {
+        return this.classDoraSelected;
+      } else {
+        return this.classDora;
+      }
+
     },
   },
 };
@@ -69,11 +88,13 @@ export default {
     border-radius: 10px;
     background-color: #f4f4f4;
     border: 4px solid #e8e8e8;
-    opacity: 0.89;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.16);
     left: 50%;
     transform: translateX(-50%);
     position: relative;
+    &.selected{
+      box-shadow: 0 0 0 4px rgb(64, 169, 255);
+    }
   }
   &_bottom{
     display: flex;
@@ -108,7 +129,10 @@ export default {
     width: 70px;
     height: 80px;
     background-color: #f4f4f4;
-    border: 4px solid #e8e8e8;
+    border-radius: 3px;
+    &.selected{
+      box-shadow: 0 0 0 4px rgb(64, 169, 255);
+    }
   }
   &_button{
     display: block;
