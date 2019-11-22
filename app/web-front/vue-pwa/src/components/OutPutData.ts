@@ -13,7 +13,7 @@ export default {
       yaku: {
         1: {
           name: 'リーチ',
-          star: '★★★★★'
+          star: '★★★★★',
         },
         2: {
           name: 'ピンフ',
