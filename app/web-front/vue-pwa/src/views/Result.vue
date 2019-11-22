@@ -38,7 +38,9 @@
 </template>
 <script>
 import out_put_data from '../components/OutPutData';
+import InputCards from '@/components/InputCardList';
 import axios from 'axios';
+import store from '../store';
 
 export default {
   name: 'result',
@@ -48,35 +50,21 @@ export default {
       point: null,
       resignation: null,
       post_data: {
-        haipai: [
-          {name: '1m', amount: 1},
-          {name: 'a5m', amount: 1},
-          {name: '7m', amount: 1},
-          {name: '9m', amount: 1},
-          {name: '1s', amount: 1},
-          {name: '3s', amount: 1},
-          {name: '7s', amount: 1},
-          {name: '2p', amount: 1},
-          {name: '5p', amount: 1},
-          {name: '7p', amount: 1},
-          {name: 'c', amount: 1},
-          {name: 'e', amount: 1},
-          {name: 'f', amount: 1},
-          {name: 'g', amount: 1},
-        ],
+        haipai: InputCards.cards,
         dora: {
-          name: '7s',
+          name: InputCards.dora,
         },
         ground: {
-          name: 'a',
+          name: store.getters.groundWind,
         },
         own: {
-          name: 'a',
+          name: store.getters.ownWind,
         },
       },
     };
   },
   mounted() {
+    console.log(JSON.stringify(InputCards.cards));
     const axiosApi = axios.create({
       headers: {
         'Content-Type': 'application/json',
