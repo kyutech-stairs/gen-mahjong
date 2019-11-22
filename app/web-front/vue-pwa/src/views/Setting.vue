@@ -45,8 +45,11 @@
         </ul>
       </router-link>
     </div>
-    <div v-show="examData()">
+    <div v-if="examData()">
       <router-link class="c-setting_submit" to="/result">データ送信</router-link>
+    </div>
+    <div v-else class="c-setting_alert">
+      配牌とドラの入力が完了していません
     </div>
   </div>
 </template>
@@ -261,6 +264,12 @@ export default {
     width: 30%;
     left: 50%;
     transform: translateX(-50%);
+  }
+  &_alert{
+    margin-top: 5%;
+    font-family: Tanuki-Permanent-Marker;
+    text-align:  center;
+    color: white;
   }
 }
 
