@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Setting from '../views/Setting.vue';
 import Haipai from '../views/Haipai.vue';
+import Result from '../views/Result.vue';
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/haipai',
     name: 'haipai',
     component: Haipai,
+  },
+  {
+    path: '/result',
+    name: 'result',
+    component: Result,
   },
 ];
 
