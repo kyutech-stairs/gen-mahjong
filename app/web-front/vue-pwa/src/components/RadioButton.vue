@@ -17,13 +17,16 @@
 export default {
   name: 'MyRadio',
   props: {
-    value: { type: String, require: true },
     options: { type: Array, require: true },
     name: { type: String, require: true },
   },
   methods: {
     updateValue(e) {
-      this.$emit('input', e.target.value);
+      if (this.name === 'own-wind') {
+        this.$store.commit('switchOwnWind', e.target.value);
+      } else {
+        this.$store.commit('switchGroundWind', e.target.value);
+      }
     },
   },
 };
