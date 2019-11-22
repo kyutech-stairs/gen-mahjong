@@ -52,6 +52,11 @@ export default {
   &_hai{
     display: inline-block;
     margin: 2px;
+    height: 60px;
+    & img{
+      object-fit: contain;
+      height: 100%;
+    }
   }
 }
 </style>

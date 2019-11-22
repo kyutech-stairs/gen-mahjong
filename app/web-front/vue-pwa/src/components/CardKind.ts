@@ -37,7 +37,6 @@ export default {
     'a5m': '/img/hai/a5m.png',
     'a5p': '/img/hai/a5p.png',
     'a5s': '/img/hai/a5s.png',
-    'dd': '',
   },
 };
 
