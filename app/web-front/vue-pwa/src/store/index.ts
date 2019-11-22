@@ -20,6 +20,14 @@ export default new Vuex.Store({
       state.ground_wind = wind;
     },
   },
+  getters: {
+    ownWind: (state) => {
+      return state.own_wind;
+    },
+    groundWind: (state) => {
+      return state.ground_wind;
+    },
+  },
   actions: {
   },
   modules: {
