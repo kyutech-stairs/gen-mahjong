@@ -13,8 +13,8 @@
         </div>
         <div class="c-haipai_button">
           <ClearBtn @doraName="dora_change"></ClearBtn>
+          <router-link to="/" class="c-haipai_move">入力完了</router-link>
         </div>
-        <router-link to="/" class="c-haipai_move">入力完了</router-link>
       </div>
     </div>
   </div>
@@ -46,6 +46,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+%btn-propaty{
+  box-sizing: border-box;
+  margin-top: 10%;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 50px;
+  padding: 10px 7px 2px 7px;
+  background-color: #68c4f5;
+  border: none;
+  color: white;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.16));
+}
 .c-haipai{
   top: 5%;
   display: block;
@@ -86,7 +98,7 @@ export default {
     padding: 0 10px;
     display: flex;
     flex-direction: column;
-    height: 60%;
+    height: 100%;
     width: 25%;
   }
   &_dora{
@@ -100,16 +112,15 @@ export default {
   }
   &_button{
     display: block;
-    margin-top: 20px;
+    margin-top: 20%;
     margin-left: 50%;
     transform: translateX(-50%);
     width: 80%;
   }
   &_move{
+    @extend %btn-propaty;
+    text-decoration: none;
     display: block;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
   }
 }
 </style>
