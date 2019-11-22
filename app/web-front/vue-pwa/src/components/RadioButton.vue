@@ -6,7 +6,7 @@
           type="radio"
           :name="name"
           :value="option.value"
-          @change="updateValue"
+          v-model="wind"
         />{{ option.label }}
       </label>
     </template>
@@ -20,13 +20,22 @@ export default {
     options: { type: Array, require: true },
     name: { type: String, require: true },
   },
-  methods: {
-    updateValue(e) {
-      if (this.name === 'own-wind') {
-        this.$store.commit('switchOwnWind', e.target.value);
-      } else {
-        this.$store.commit('switchGroundWind', e.target.value);
-      }
+  computed: {
+    wind: {
+      get() {
+        if (this.name === 'own-wind') {
+          return this.$store.state.own_wind;
+        } else {
+          return this.$store.state.ground_wind;
+        }
+      },
+      set(value) {
+        if (this.name === 'own-wind') {
+          this.$store.commit('switchOwnWind', value);
+        } else {
+          this.$store.commit('switchGroundWind', value);
+        }
+      },
     },
   },
 };

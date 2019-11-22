@@ -17,11 +17,11 @@
       <div class="c-setting_wind">
         <div class="c-setting_wind-own">
           <h3 class="c-setting_wind-own_title">自風</h3>
-          <MyRadio class="c-setting_wind-own_select" v-model="sampleForm.radio" name="own-wind" :options="options"></MyRadio>
+          <MyRadio class="c-setting_wind-own_select" name="own-wind" :options="options"></MyRadio>
         </div>
         <div class="c-setting_wind-ground">
           <h3 class="c-setting_wind-ground_title">場風</h3>
-          <MyRadio class="c-setting_wind-ground_select" v-model="sampleForm.radio" name="ground-wind" :options="options"></MyRadio>
+          <MyRadio class="c-setting_wind-ground_select" name="ground-wind" :options="options"></MyRadio>
         </div>
       </div>
     </div>
@@ -91,7 +91,9 @@ export default {
       ],
       sampleForm: {
         text: '',
-        radio: '',
+        own_radio: '',
+        ground_radio: '',
+        // radio: '',
         select: '',
         textarea: '',
         checkbox: [],
