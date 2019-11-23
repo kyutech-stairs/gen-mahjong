@@ -130,6 +130,10 @@ export default {
     height: 80px;
     background-color: #f4f4f4;
     border-radius: 3px;
+    @media screen and (min-width: 900px) {
+      height: 150px;
+      width: 120px;
+    }
     &.selected{
       box-shadow: 0 0 0 4px rgb(64, 169, 255);
     }
