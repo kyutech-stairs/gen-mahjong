@@ -65,7 +65,7 @@ export default {
         'Content-Type': 'application/json',
       },
     });
-    axiosApi.post('http://127.0.0.1:8000/genapp/', JSON.stringify(this.post_data))
+    axiosApi.post('https://gen-mahjong.herokuapp.com/genapp/', JSON.stringify(this.post_data))
     .then((response) => {
       this.point = response.data.point;
       this.resignation = response.data.res;
