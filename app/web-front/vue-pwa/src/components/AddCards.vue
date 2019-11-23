@@ -53,9 +53,14 @@ export default {
     display: inline-block;
     margin: 2px;
     height: 60px;
+    @media screen and (min-width: 900px) {
+      height: 100px;
+      width: 70px;
+    }
     & img{
       object-fit: contain;
       height: 100%;
+
     }
   }
 }

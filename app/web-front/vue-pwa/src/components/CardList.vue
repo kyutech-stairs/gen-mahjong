@@ -42,7 +42,12 @@ export default {
   &_hai{
     display: inline-block;
     margin: 0 2px;
-    &-image{}
+    &-image{
+      @media screen and (min-width: 900px) {
+        width: 60px;
+        object-fit: contain;
+      }
+    }
   }
 }
 </style>
