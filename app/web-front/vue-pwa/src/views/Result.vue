@@ -85,6 +85,10 @@ export default {
   &_document{
     $title_font-size: 30px;
     $content_font-size: 20px;
+    @media screen and (min-width: 900px) {
+    $title_font-size: 50px;
+    $content_font-size: 30px;
+    }
     %title-set{
       font-size: $title_font-size;
       margin-top: 2%;
@@ -96,6 +100,9 @@ export default {
     &_kei{
       &_title{
         font-size: 55px;
+        @media screen and (min-width: 900px) {
+          font-size: 70px;
+        }
       }
       &_content{
         font-size: $content_font-size;
@@ -138,6 +145,9 @@ export default {
   &_return{
     color: white;
     font-size: 18px;
+    @media screen and (min-width: 900px) {
+      font-size: 20px;
+    }
   }
 }
 </style>
