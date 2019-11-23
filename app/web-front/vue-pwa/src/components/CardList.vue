@@ -3,7 +3,7 @@
     <template v-for="(card, index) in cards">
       <template v-for="n in card.amount">
         <li class="c-selected_hai" :key="`${n}${index}`">
-          <img class="c-selected_hai-image" :src="getImageUrl(card.hai)">
+          <img class="c-selected_hai-image" :src="getImageUrl(card.hai)" v-on:click="deleteCard(cards)">
         </li>
       </template>
     </template>
@@ -29,6 +29,13 @@ export default {
     },
     switchFocusState() {
       this.$store.commit('switchFocus', false);
+    },
+    deleteCard(card) {
+      if (card.amount !== 1){
+
+      } else {
+
+      }
     },
   },
 };
