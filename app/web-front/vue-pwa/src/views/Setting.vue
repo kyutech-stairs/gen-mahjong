@@ -160,10 +160,15 @@ export default {
    color: white;
    padding-top: 7%;
    box-sizing: border-box;
+   height: 100%;
+   @media screen and (min-width: 900px) {
+     font-size: 40px;
+     padding-top: 10%;
+   }
   &_top{
     display: flex;
     justify-content: space-around;
-    height: 50%;
+    height: 40%;
   }
   &_dora{
     display: inline-block;
@@ -173,6 +178,10 @@ export default {
       vertical-align: middle;
       height: 80px;
       margin-right: 10px;
+      @media screen and (min-width: 900px) {
+        height: 100%;
+        top: 0;
+      }
     }
     &-box{
       display: inline-block;
@@ -185,6 +194,10 @@ export default {
       box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.16);
       border: solid 4px #e8e8e8;
       background-color: #4e4e4e;
+      @media screen and (min-width: 900px) {
+        height: 150px;
+        width: 100px;
+      }
     }
     &-image{
       object-fit: contain;
@@ -235,6 +248,9 @@ export default {
       box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.16);
       border: solid 4px #e8e8e8;
       background-color: #4e4e4e;
+      @media screen and (min-width: 900px) {
+        height: 100px;
+      }
     }
     &-list{
       height: 100%;
@@ -264,6 +280,11 @@ export default {
     width: 30%;
     left: 50%;
     transform: translateX(-50%);
+    @media screen and (min-width: 900px) {
+      height: 50px;
+      padding-top: 15px;
+      margin-top: 20px;
+    }
   }
   &_alert{
     margin-top: 5%;
