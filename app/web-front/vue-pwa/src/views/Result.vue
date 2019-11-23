@@ -87,10 +87,10 @@ export default {
     $content_font-size: 20px;
     %title-set{
       font-size: $title_font-size;
-      margin-top: 3%;
+      margin-top: 2%;
     }
     box-sizing: border-box;
-    padding: 5% 5%;
+    padding: 3% 5%;
     color: #ffffff;
     text-align: left;
     &_kei{
